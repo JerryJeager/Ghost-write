@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import {  Comfortaa } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const comfortaa =Comfortaa({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ghost Write",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={comfortaa.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
