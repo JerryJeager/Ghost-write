@@ -6,8 +6,8 @@ const page = () => {
   const router = useRouter();
   useEffect(() => {
     if (
-      sessionStorage.getItem("token") === "" ||
-      sessionStorage.getItem("user_id") === ""
+      !sessionStorage.getItem("token") ||
+      !sessionStorage.getItem("user_id")
     ) {
       router.push("/auth/login");
     }

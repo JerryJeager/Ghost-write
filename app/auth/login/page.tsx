@@ -93,7 +93,7 @@ const page = () => {
             type="submit"
             className="bg-darkGreen p-2 text-white w-[200px] rounded-md"
           >
-            Signup
+            Login
           </button>
         )}
         {isLoading && (
