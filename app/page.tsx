@@ -1,5 +1,6 @@
 import Image from "next/image";
 import eye from "../public/images/eye.png";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <h2 className="font-black text-2xl lg:text-4xl text-primary">
         Share Your Thoughts Anonymously
       </h2>
-      <p className="text-white text-sm lg:text-lg mt-6 lg:w-[60%] mx-auto bg-green-radiant">
+      <p className="text-white text-sm lg:text-lg mt-6 lg:w-[60%] mx-auto bg-green-radiant lg:bg-green-radiant2">
         Welcome to GhostWrite, the platform for sending anonymous messages.
         Share secrets, give honest feedback, or express yourself without
         revealing your identity. Our secure, easy-to-use platform ensures your
@@ -15,9 +16,11 @@ export default function Home() {
       </p>
       <Image alt="eye image" src={eye} width={300} className="mx-auto mt-4" />
 
-      <button className="bg-primary rounded-md text-white p-2 mt-4 lg:mt-12">
-        Get Started
-      </button>
+      <Link href={"/auth/signup"}>
+        <button className="bg-primary rounded-md text-white p-2 mt-4 lg:mt-12">
+          Get Started
+        </button>
+      </Link>
     </main>
   );
 }

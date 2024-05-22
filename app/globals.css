@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+  @apply bg-dark1;
+}
+.signup input, .login input{
+  @apply p-2 border border-gray1 rounded-sm w-[230px] lg:w-[400px] mt-2 bg-transparent outline-none caret-white text-white;
+}
+.signup p, .login p{
+  @apply text-white;
+}
