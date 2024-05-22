@@ -14,7 +14,7 @@ export default function Home() {
         revealing your identity. Our secure, easy-to-use platform ensures your
         privacy. Speak freely and connect without boundaries with GhostWrite.
       </p>
-      <Image alt="eye image" src={eye} width={300} className="mx-auto mt-4" />
+      <Image placeholder="blur" alt="eye image" src={eye} width={300} className="mx-auto mt-4" />
 
       <Link href={"/auth/signup"}>
         <button className="bg-primary rounded-md text-white p-2 mt-4 lg:mt-12">
