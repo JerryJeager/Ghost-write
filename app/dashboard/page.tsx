@@ -16,11 +16,11 @@ const page = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isMessageLoading, setIsMessageLoading] = useState(false);
-//   const [error, setError] = useState("");
+  //   const [error, setError] = useState("");
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState("");
-  const token = sessionStorage.getItem("token");
-  const userID = sessionStorage.getItem("user_id");
+  const [token, setToken] = useState<string | null>("");
+  const [userID, setUserID] = useState<string | null>("");
   const getUser = async () => {
     setIsLoading(true);
     // setError("");
@@ -34,7 +34,7 @@ const page = () => {
         return;
       }
     } catch {
-    //   setError("user not found");
+      //   setError("user not found");
     } finally {
       setIsLoading(false);
     }
@@ -52,22 +52,29 @@ const page = () => {
         }
       );
 
-    // console.log(res.status)/
+      // console.log(res.status)/
       if (res.status == 200) {
         setMessages(res.data);
         return;
       }
     } catch {
-    //   setError("user not found");
+      //   setError("user not found");
       router.push("/auth/login");
     } finally {
       setIsMessageLoading(false);
     }
   };
   useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    const userID = sessionStorage.getItem("user_id");
+
     if (!token || !userID) {
       router.push("/auth/login");
+      return;
     }
+
+    setToken(token);
+    setUserID(userID);
     getUser();
     getMessage();
   }, []);
@@ -86,11 +93,15 @@ const page = () => {
 
           <ShareLink userID={userID} />
           <div className="mt-8">
-          <h3 className="text-white">My Messages</h3>
+            <h3 className="text-white">My Messages</h3>
             {!isMessageLoading &&
               messages.length > 0 &&
               messages.map((m: Message) => (
-                <MessageCard key={m.id} message={m.message} created_at={m.created_at} />
+                <MessageCard
+                  key={m.id}
+                  message={m.message}
+                  created_at={m.created_at}
+                />
               ))}
             {!isMessageLoading && messages.length == 0 && (
               <p className="text-white mt-4">
