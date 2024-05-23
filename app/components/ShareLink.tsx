@@ -9,7 +9,7 @@ import {
 
 const ShareLink = ({userID}: {userID: string}) => {
   const url =
-    `https://ghost-write.vercel.app/${userID}`;
+    `https://ghost-write.vercel.app/message/${userID}`;
   return (
     <div className="mt-8">
       <p className="text-white">
