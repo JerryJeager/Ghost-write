@@ -35,6 +35,7 @@ const MessageForm = ({ userID }: { userID: string }) => {
     <form action="" onSubmit={handleSubmit} className="mt-6 flex flex-col justify-center items-center">
       <div className="relative">
         <textarea
+          required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           cols={30}
