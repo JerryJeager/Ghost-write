@@ -101,7 +101,7 @@ const page = () => {
             type="button"
             className="bg-darkGreen p-2 text-white w-[200px] rounded-md"
           >
-            <Spinner />
+            <Spinner bg={"darkGreen"} />
           </button>
         )}
 
