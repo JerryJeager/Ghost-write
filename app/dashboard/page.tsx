@@ -106,7 +106,7 @@ const Dashboard = () => {
               ))}
             {!isMessageLoading && messages.length == 0 && (
               <p className="text-white mt-4">
-                You don't have any anonymous yet!
+                You don't have any anonymous messages yet!
               </p>
             )}
             {isMessageLoading && (
