@@ -97,7 +97,7 @@ const Dashboard = () => {
             <h3 className="text-white">My Messages</h3>
             {!isMessageLoading &&
               messages.length > 0 &&
-              messages.map((m: Message) => (
+              messages.reverse().map((m: Message) => (
                 <MessageCard
                   key={m.id}
                   message={m.message}
