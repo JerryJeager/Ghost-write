@@ -21,7 +21,7 @@ const page = () => {
   const [username, setUsername] = useState("");
   const [token, setToken] = useState<string | null>("");
   const [userID, setUserID] = useState<string | null>("");
-  const getUser = async () => {
+  const getUser = async (userID: string) => {
     setIsLoading(true);
     // setError("");
     try {
@@ -39,7 +39,7 @@ const page = () => {
       setIsLoading(false);
     }
   };
-  const getMessage = async () => {
+  const getMessage = async (userID: string, token: string) => {
     setIsMessageLoading(true);
     // setError("");
     try {
@@ -65,18 +65,19 @@ const page = () => {
     }
   };
   useEffect(() => {
-    const tokenS = sessionStorage.getItem("token");
-    const userIDS = sessionStorage.getItem("user_id");
+    if (typeof window !== "undefined") {
+      const token = sessionStorage.getItem("token");
+      const userID = sessionStorage.getItem("user_id");
+      setToken(token || "");
+      setUserID(userID || "");
 
-    if (!tokenS || !userIDS) {
-      router.push("/auth/login");
-      return;
+      if (!token || !userID) {
+        router.push("/auth/login");
+      } else {
+        getUser(userID);
+        getMessage(userID, token);
+      }
     }
-
-    setToken(tokenS);
-    setUserID(userIDS);
-    getUser();
-    getMessage();
   }, []);
   return (
     <>
