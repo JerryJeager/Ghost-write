@@ -10,7 +10,7 @@ type FormData = {
   password: string;
 };
 
-const page = () => {
+const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -116,4 +116,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Login;

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const page = () => {
+const Message = () => {
   const [username, setUsername] = useState("");
   const [isLoading, setILoading] = useState(false);
   const [error, setError] = useState("");
@@ -65,4 +65,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Message;

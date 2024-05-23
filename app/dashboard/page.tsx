@@ -12,7 +12,7 @@ type Message = {
   created_at: string;
 };
 
-const page = () => {
+const Dashboard = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isMessageLoading, setIsMessageLoading] = useState(false);
@@ -120,4 +120,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Dashboard;

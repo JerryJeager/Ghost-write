@@ -12,7 +12,7 @@ type FormData = {
   password2: string;
 };
 
-const page = () => {
+const Signup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -141,4 +141,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Signup;

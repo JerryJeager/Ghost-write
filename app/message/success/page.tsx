@@ -1,7 +1,7 @@
 import Image from "next/image"
 import eye from "../../../public/images/eye.png"
 
-const page = () => {
+const Success = () => {
   return (
     <section className="px-[10%] flex flex-col justify-center items-center">
         <h2 className="bg-green-radiant4 text-white font-black mt-8 text-2xl text-center">
@@ -12,4 +12,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Success
