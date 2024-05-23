@@ -65,16 +65,16 @@ const page = () => {
     }
   };
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    const userID = sessionStorage.getItem("user_id");
+    const tokenS = sessionStorage.getItem("token");
+    const userIDS = sessionStorage.getItem("user_id");
 
-    if (!token || !userID) {
+    if (!tokenS || !userIDS) {
       router.push("/auth/login");
       return;
     }
 
-    setToken(token);
-    setUserID(userID);
+    setToken(tokenS);
+    setUserID(userIDS);
     getUser();
     getMessage();
   }, []);
